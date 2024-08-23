@@ -1,0 +1,94 @@
+<div class="container bg-light">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="shadow rounded p-4 m-4 bg-white">
+                <h2>Register</h2>
+                <hr>
+                <form #registerForm="ngForm" (submit)="onSubmitHandler(registerForm.value)">
+                    <!--Break up json data with json pipe, this displays the form data and user model data
+                    <h2>{{ registerForm.value | json }}</h2>
+                    <hr>
+                    <h2>{{ userModel | json }}</h2>
+                    This is a template format.
+                    -->
+
+                    <!--Use two-way data binding so form data also changes the stored object-->
+                    <!--FirstName will be shown invalid when touched && empty-->
+                    <div class="form-group">
+                        <label for="">First Name</label>
+                        <input 
+                        type="text" 
+                        name="firstName"
+                        class="form-control" 
+                        [(ngModel)]="userModel.firstName" 
+                        #firstName="ngModel" 
+                        required 
+                        [class.is-invalid]="firstName.touched && firstName.invalid"
+                        placeholder="First Name">
+                        <small class="text-danger" [class.d-none]="firstName.untouched || firstName.valid">first name is required</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input 
+                        type="text" 
+                        name="email" 
+                        class="form-control" 
+                        [(ngModel)]="userModel.email" 
+                        #email="ngModel" 
+                        required [class.is-invalid]="email.invalid && email.touched" 
+                        pattern="^[a-zA-Z0-9_!#$%&amp;'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$"
+                        placeholder="example@email.com">
+                        <div *ngIf="email.errors && email.touched">
+                            <small class="text-danger" *ngIf="email.errors['required']">Email is required</small>
+                            <small class="text-danger"  *ngIf="email.errors['pattern']">Email is not valid</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Mobile</label>
+                        <input 
+                        type="text" 
+                        name="mobile" 
+                        class="form-control" 
+                        [(ngModel)]="userModel.mobile" 
+                        #mobile="ngModel" 
+                        required 
+                        [class.is-invalid]="mobile.invalid && mobile.touched"
+                        pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+                        placeholder="XXX-XXX-XXXX">
+                        <div *ngIf="mobile.errors && mobile.touched">
+                            <small class="text-danger" *ngIf="mobile.errors['required']">Mobile is required</small>
+                            <small class="text-danger"  *ngIf="mobile.errors['pattern']">Mobile is not valid</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input 
+                        type="password" 
+                        name="password" 
+                        class="form-control" 
+                        [(ngModel)]="userModel.password" 
+                        #password="ngModel" 
+                        required 
+                        [class.is-invalid]="password.invalid && password.touched"
+                        minlength="6"
+                        placeholder="Password">
+                        <div *ngIf="password.errors && password.touched">
+                            <small class="text-danger" *ngIf="password.errors['required']">Password is required</small>
+                            <small class="text-danger"  *ngIf="password.errors['minlength']">Password must be at least 6 characters long</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary w-100 mt-2">Register</button>
+                    </div>
+                </form>
+                <br>
+                <p class="text-center">Registered? <a href="/login">Login</a></p>
+            </div>
+        </div>
+    </div>
+</div>

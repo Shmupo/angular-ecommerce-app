@@ -1,0 +1,66 @@
+[
+    {  
+        "id": "0000A",
+        "title": "Sir Croaksalot",
+        "description": "A noble frog knight who guards the lily pad kingdom with his mighty ribbit. Beware his Croak of Justice!",
+        "url": "https://via.placeholder.com/600/66b7d2",
+        "rarity": "Common",
+        "price": 0.99
+    },
+    {
+        "id": "0000B",
+        "title": "Hoppy Potter",
+        "description": "The frog who lived... to leap! Master of amphibious magic and potions that bubble like a bog.",
+        "url": "https://via.placeholder.com/600/1fe46f",
+        "rarity": "Mythic",
+        "price": 12.99
+    },
+    {
+        "id": "0000C",
+        "title": "The Ribbitron",
+        "description": "Part frog, part machine, all ribbit. Programmed to hop nonstop and compute the perfect fly-catching trajectory.",
+        "url": "https://via.placeholder.com/600/66b7d2",
+        "rarity": "Common",
+        "price": 1.24
+    },
+    {
+        "id": "0000D",
+        "title": "Professor Croakins",
+        "description": "The wisest frog in the pond. Known for his lectures on 'Advanced Fly-ology' and 'The Art of the Hop.'",
+        "url": "https://via.placeholder.com/600/f9cee5",
+        "rarity": "Rare",
+        "price": 3.49
+    },
+    {
+        "id": "0000E",
+        "title": "Fly-Swatter",
+        "description": "This frog has one job, and he does it well. No fly is safe when Fred is on the hunt!",
+        "url": "https://via.placeholder.com/600/66b7d2",
+        "rarity": "Common",
+        "price": 2.74
+    },
+    {
+        "id": "0000F",
+        "title": "Frogzilla",
+        "description": "A giant among frogs, Frogzilla terrorizes small ponds everywhere. Legend says he once ate a fly the size of a hummingbird.",
+        "url": "https://via.placeholder.com/600/1fe46f",
+        "rarity": "Mythic",
+        "price": 14.49
+    },
+    {
+        "id": "0000G",
+        "title": "Toadally Groovy",
+        "description": "This groovy frog is all about good vibes and high hops. Known for his radical lily pad surfing skills.",
+        "url": "https://via.placeholder.com/600/f9cee5",
+        "rarity": "Rare",
+        "price": 5.99
+    },
+    {
+        "id": "0000H",
+        "title": "Croak and Dagger",
+        "description": "A mysterious, shadowy frog that appears out of nowhere. Specialized in stealthy croaks and silent leaps.",
+        "url": "https://via.placeholder.com/600/66b7d2",
+        "rarity": "Common",
+        "price": 0.49
+    }
+]

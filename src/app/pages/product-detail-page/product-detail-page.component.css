@@ -1,0 +1,7 @@
+.carousel .carousel-indicators li {
+      background-color: gray; 
+    }
+
+    .carousel button {
+        background-color: rgba(128, 128, 128, 0.5); 
+      }

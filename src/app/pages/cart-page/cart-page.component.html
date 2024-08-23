@@ -1,0 +1,62 @@
+<div class="container">
+    <hr />
+    <h3>Cart</h3>
+    <hr />
+    <div class="row">
+        <!-- First Column: Cart Items -->
+        <div class="col-md-8">
+            <div class="card mb-3" *ngFor="let merch of products">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <button class="btn btn-outline-hover bg-transparent" (click)="navigateToDetailPage(merch.id)">
+                            <img [src]="merch.images[0]" class="w-100">
+                        </button>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="font-weight-bold align-middle pt-2" style="height: 3.6rem;">
+                                {{ merch.title }}
+                            </h4>
+                            <p class="text-danger font-weight-bold my-auto" style="font-size: 1.5rem;">
+                                {{ merch.price | currency }}
+                            </p>
+                            <div class="d-flex">
+                                <p class="my-auto font-weight-bold mr-2" style="font-size: 1.2rem;">Quantity</p>
+                                <select class="form-control w-25" [ngModel]="merch.quantity"
+                                    (ngModelChange)="updateQuantity(merch.id, $event)">
+                                    <option *ngFor="let num of quantityOptions" [value]="num">{{ num }}</option>
+                                </select>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <button class="btn btn-danger btn-sm" (click)="removeItem(merch.id)">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Second Column: Cart Summary and Checkout -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Order Summary</h4>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <p>Subtotal</p>
+                        <p>{{ getSubtotal() | currency }}</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p>Tax (10%)</p>
+                        <p>{{ getTax() | currency }}</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p>Total</p>
+                        <p>{{ getTotal() | currency }}</p>
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary btn-block" (click)="proceedToCheckout()">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

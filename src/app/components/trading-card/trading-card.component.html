@@ -1,0 +1,8 @@
+<div class="card-container rounded shadow" [ngClass]="rarity">
+    <h5 class="font-italic font-weight-bold mt-1 title">{{ title }}</h5>
+    <img [src]="imageUrl" class="card-img-top w-75 rounded mx-auto d-block" alt="Card Image">
+    <div class="p-4">
+      <p class="card-text font-italic">{{ description }}</p>
+      <p class="rarity-text">{{ rarity }}</p>
+    </div>
+</div>

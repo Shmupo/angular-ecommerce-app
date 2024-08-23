@@ -1,0 +1,9 @@
+.btn-outline-hover {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-outline-hover:hover {
+    outline: 4px solid black;
+  }
+  

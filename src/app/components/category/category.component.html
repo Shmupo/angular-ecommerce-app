@@ -1,0 +1,29 @@
+<!--
+<div class="p-3 border mt-3 rounded shadow">
+  <ul class="nav flex-column">
+    <p class="navbar-brand">Categories</p>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">All</a>
+    </li>
+    <h5>Card Rarity</h5>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Common</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Rare</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Mythic</a>
+    </li>
+  </ul>
+</div>
+-->
+
+<div class="p-3 border mt-3 rounded shadow">
+  <ul class="nav flex-column">
+    <p class="navbar-brand">Categories</p>
+    <li class="nav-item" *ngFor="let category of categories">
+      <a class="nav-link" [routerLink]="['/product-page', category.id]">{{category.name}}</a>
+    </li>
+  </ul>
+</div>

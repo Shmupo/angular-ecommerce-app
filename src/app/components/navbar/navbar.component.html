@@ -1,0 +1,39 @@
+<nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
+  <a class="navbar-brand" href="#">RibByte</a>
+  <div class="w-50 d-flex">
+    <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </div>
+  <div class="d-flex">
+    <a class="nav-link px-3 rounded bg-primary text-white mr-3" href="/cart" *ngIf="loggedIn">Cart ({{ cartItemCount }})</a>
+    <a class="nav-link px-3 rounded bg-primary text-dark" href="/login" *ngIf="!loggedIn">Sign In</a>
+    <a class="nav-link px-3 bg-danger rounded text-white" href="/login" (click)="logout()" *ngIf="loggedIn">Log Out</a>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-secondary p-0">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarCategory" aria-controls="navBarCategory" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navBarCategory">
+    <ul class="navbar-nav"> 
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="/product-page/-1">Cards</a>
+      </li>
+
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="/product-page">Products</a>
+      </li>
+
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="/about-page">About</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>

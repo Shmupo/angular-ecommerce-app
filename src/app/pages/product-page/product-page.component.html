@@ -1,0 +1,10 @@
+<div class="container-fluid bg-light">
+    <div class="row">
+        <app-category class="col-lg-2 col-md-4 col-sm-4"></app-category>
+        <!--<app-product-list class="col-lg-10 col-md-8 col-sm-8"></app-product-list>-->
+        <app-product-list 
+        class="col-lg-10 col-md-8 col-sm-8"
+        [category]="category">
+        </app-product-list>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Finalize payment.</h1>
+    <p class="lead">Disclaimer: you will receive absolutely nothing.</p>
+    <hr class="my-4">
+    
+    <!-- Cart Items List -->
+    <div *ngIf="!isCartEmpty">
+      <h4>Your Cart:</h4>
+      <ul class="list-group mb-4">
+        <li *ngFor="let item of products" class="list-group-item d-flex justify-content-between align-items-center">
+          <span>{{ item.title }} (x{{ item.quantity }})</span>
+          <span>{{ item.price | currency }}</span>
+        </li>
+      </ul>
+      
+      <!-- Cart Summary -->
+      <div class="d-flex justify-content-between mb-4">
+        <h5>Subtotal:</h5>
+        <p>{{ getSubtotal() | currency }}</p>
+      </div>
+      <div class="d-flex justify-content-between mb-4">
+        <h5>Tax (10%):</h5>
+        <p>{{ getTax() | currency }}</p>
+      </div>
+      <div class="d-flex justify-content-between mb-4">
+        <h5>Total:</h5>
+        <p>{{ getTotal() | currency }}</p>
+      </div>
+    </div>
+    
+    <!-- Messages and Purchase Button -->
+    <p>{{ message }}</p>
+    <button class="btn btn-primary btn-lg" (click)="purchaseButtonHandler()">Purchase</button>
+  </div>
+</div>
